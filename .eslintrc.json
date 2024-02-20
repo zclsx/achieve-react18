@@ -1,0 +1,49 @@
+{
+  // 这是 ESLint 的配置文件。
+  "env": {
+    // 设置待检查代码的运行环境。
+    // "browser" 表示代码将在浏览器中运行。
+    // "es2021" 表示代码应遵循 ES2021 标准进行校验。
+    // "node" 表示代码应遵循 Node.js 环境进行校验。
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    // 扩展 ESLint 推荐的规则集合。
+    // 同时扩展 TypeScript ESLint 插件推荐的规则。
+    // 同时扩展 Prettier 的推荐规则。
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  // 设置解析器为 "@typescript-eslint/parser"。
+  // 此解析器用于解析 TypeScript 代码。
+  "parserOptions": {
+    // 设置解析器选项。
+    // "ecmaVersion": "latest" 指定使用最新 ECMAScript 版本进行解析。
+    // "sourceType": "module" 表示代码应被视为模块进行处理。
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "prettier"],
+  // 设置 ESLint 使用的插件列表。
+  // "@typescript-eslint" 是一个用于 TypeScript 代码检测的插件。
+  // "prettier" 是一个用于代码格式规范检测的插件。
+  "rules": {
+    "prettier/prettier": "error",
+    // 将 "prettier/prettier" 规则设置为 "error"。
+    // 这意味着如果代码不符合 Prettier 格式化规则，将会抛出错误。
+    "no-case-declarations": "off",
+    // 关闭 "no-case-declarations" 规则。
+    // 该规则检查 switch 语句中是否声明了变量。
+    "no-constant-condition": "off",
+    // 关闭 "no-constant-condition" 规则。
+    // 该规则检查控制流语句中的常量条件。
+    "@typescript-eslint/ban-ts-comment": "off"
+    // 关闭 "@typescript-eslint/ban-ts-comment" 规则。
+    // 该规则检查是否存在 TypeScript 中不允许使用的注释。
+  }
+}
